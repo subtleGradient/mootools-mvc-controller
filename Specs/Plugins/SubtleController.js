@@ -6,7 +6,7 @@ License:
 	MIT-style license.
 */
 
-describe('PluginName', {
+describe('SubtleController', {
 
 	'before all': function(){
 	},
