@@ -19,9 +19,16 @@ var SubtleController = new Class({
 	
 	initialize: function(data, options){
 		this.setOptions(options);
-		this.bindings = $H(data);
+		this.bindings = [$H(data)];
 		window.addEvent('domready',function(){ this.ready = true; }.bind(this));
 		return this.fireEvent('initialize');
+	},
+	
+	get: function(key){
+		return this.bindings[0].get(key);
+	},
+	set: function(key, value){
+		return this.updateOne(key, value);
 	},
 	
 	update: function(keys){
@@ -198,3 +205,7 @@ SubtleController.Defaults = new Class({
 //     NSWindowController
 //     NSDocumentController
 // 
+
+
+
+

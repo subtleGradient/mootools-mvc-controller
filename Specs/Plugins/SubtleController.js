@@ -1,7 +1,9 @@
 describe('SubtleController', {
 
 	'before all': function(){
-		controller = new SubtleController();
+		controller = new SubtleController({
+			'key':'value'
+		});
 	},
 
 	'after all': function(){
@@ -20,7 +22,11 @@ describe('SubtleController', {
 	'should implement addBinding': function(){
 		value_of(typeof controller.addBinding).should_be('function');
 	},
-
+	
+	'should get value': function(){
+		value_of(controller.get('key')).should_be('value');
+	},
+	
 	'':$empty
 });
 
